@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS school_db;
+
+CREATE DATABASE school_db;
+

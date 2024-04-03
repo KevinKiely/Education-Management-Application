@@ -16,4 +16,3 @@ const studentSeeds = [
 const seedStudents = () => Student.bulkCreate(studentSeeds, { returning: true });
 
 module.exports = seedStudents;
-

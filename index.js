@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // connect all the routes in the controllers folder
-//app.use(routes);
+app.use(routes);
 
 // sync the sequelize models to the database and start the web server
 sequelize.sync({ force: false }).then(() => {

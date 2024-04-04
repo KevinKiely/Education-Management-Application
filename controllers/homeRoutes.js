@@ -10,6 +10,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/signup', async (req, res) => {
+  try {
+    res.render('signup', {
+      pageTitle: 'signup',
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error', message: error });
+  }
+});
+
 router.get('/dashboard', (req, res) => {
   try {
     res.render('dashboard', {

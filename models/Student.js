@@ -18,6 +18,11 @@ Student.init(
         len: [1, 100],
       },
     },
+    gradeLevel: {
+      type: DataTypes.INTEGER,
+      allowNull:false,
+      
+    },
   },
   {
     sequelize,

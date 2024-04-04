@@ -2,18 +2,18 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', {
-      pageTitle: 'Home',
+    res.render('login', {
+      pageTitle: 'login',
     });
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error', message: error });
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/dashboard', (req, res) => {
   try {
-    res.render('login', {
-      pageTitle: 'Login',
+    res.render('dashboard', {
+      pageTitle: 'dashboard',
     });
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error', error });
@@ -33,7 +33,7 @@ router.get('/subjects', (req, res) => {
 router.get('/profile', (req, res) => {
   try {
     res.render('profile', {
-      pageTitle: 'Profile',
+      pageTitle: 'profile',
     });
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error', error });

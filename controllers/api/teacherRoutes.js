@@ -29,7 +29,7 @@ router.post('/login', validateTeacherLoginInfo, async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = dbTeacherData.id;
+      req.session.teacher_id = dbTeacherData.id;
       req.session.logged_in = true;
       req.session.name = dbTeacherData.name;
       res.status(200).json({ message: 'success', data: teacher });
@@ -52,7 +52,7 @@ router.post('/', validateCreateTeacher, async (req, res) => {
     const dbTeacherData = await Teacher.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = dbTeacherData.id;
+      req.session.teacher_id = dbTeacherData.id;
       req.session.logged_in = true;
       req.session.name = dbTeacherData.name;
       res.status(201).json({ message: 'Teacher created', data: {} });

@@ -18,10 +18,9 @@ Student.init(
         len: [1, 100],
       },
     },
-    gradeLevel: {
+    grade_level: {
       type: DataTypes.INTEGER,
-      allowNull:false,
-      
+      allowNull: false,
     },
   },
   {

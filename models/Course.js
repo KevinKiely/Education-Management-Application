@@ -18,6 +18,10 @@ Course.init(
         len: [1, 40],
       },
     },
+        course_description: {
+         type: DataTypes.STRING,
+            allowNull: false
+        },
     teacher_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

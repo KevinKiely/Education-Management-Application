@@ -5,13 +5,13 @@ const validateCreateCourse = require('../../middleware/validateCreateCourse');
 
 router.post('/', withAuth, validateCreateCourse, async (req, res) => {
   try {
-        const {name, description} = req.body;
+    const { name, description } = req.body;
 
-        await Course.create({
-            course_name: name,
-            course_description: description,
-            teacher_id: req.session.teacher_id
-        })
+    await Course.create({
+      course_name: name,
+      course_description: description,
+      teacher_id: req.session.teacher_id,
+    });
 
     res.status(201).json({ message: 'Student created' });
   } catch (error) {

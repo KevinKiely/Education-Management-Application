@@ -1,7 +1,12 @@
 const router = require('express').Router();
+const withAuth = require('../middleware/withAuth');
 
 router.get('/', async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      return res.redirect('/dashboard');
+    }
+
     res.render('login', {
       pageTitle: 'login',
     });
@@ -12,6 +17,10 @@ router.get('/', async (req, res) => {
 
 router.get('/signup', async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      return res.redirect('/dashboard');
+    }
+
     res.render('signup', {
       pageTitle: 'signup',
     });
@@ -20,7 +29,7 @@ router.get('/signup', async (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   try {
     res.render('dashboard', {
       pageTitle: 'dashboard',
@@ -30,7 +39,7 @@ router.get('/dashboard', (req, res) => {
   }
 });
 
-router.get('/subjects', (req, res) => {
+router.get('/courses', withAuth, (req, res) => {
   try {
     res.render('subjects', {
       pageTitle: 'Subjects',
@@ -40,7 +49,7 @@ router.get('/subjects', (req, res) => {
   }
 });
 
-router.get('/profile', (req, res) => {
+router.get('/profile', withAuth, (req, res) => {
   try {
     res.render('profile', {
       pageTitle: 'profile',

@@ -64,6 +64,16 @@ router.get('/courses', withAuth, async (req, res) => {
   }
 });
 
+router.get('/courses/create', withAuth, (req, res) => {
+  try {
+    res.render('create-course-form', {
+      pageTitle: 'Add Course',
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error', error });
+  }
+});
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const dbTeacherData = await Teacher.findByPk(req.session.teacher_id, {

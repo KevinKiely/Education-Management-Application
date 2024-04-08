@@ -1,16 +1,23 @@
-<form id='create-course-form'>
-  <h1>Add Course</h1>
-  <div>
-    <label for='coursename'>Course Name:</label>
-    <input placeholder='Enter name...' id='coursename' name='coursename' />
+<form id='create-course-form' class="section">
+  <h1 class="title is-3">Add Course</h1>
+  <div class="field">
+    <label for='coursename' class="label">Course Name:</label>
+    <div class="control">
+      <input class="input" placeholder='Enter name...' id='coursename' name='coursename' />
+    </div>
   </div>
-  <div>
-    <label for='coursedesc'>Course Description:</label>
-    <textarea cols='40' placeholder='Enter description...' id='coursedesc' name='coursedesc'></textarea>
+  <div class="field">
+    <label for='coursedesc' class="label">Course Description:</label>
+    <div class="control">
+      <textarea class="textarea" placeholder='Enter description...' id='coursedesc' name='coursedesc'></textarea>
+    </div>
   </div>
-  <div>
-    <button type='submit'>Add course</button>
+  <div class="field">
+    <div class="control">
+      <button type='submit' class="button is-primary">Add course</button>
+    </div>
   </div>
 </form>
 
 <script src='/js/createCourseForm.js'></script>
+

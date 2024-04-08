@@ -64,10 +64,18 @@ router.get('/courses', withAuth, async (req, res) => {
   }
 });
 
-router.get('/profile', withAuth, (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
+    const dbTeacherData = await Teacher.findByPk(req.session.teacher_id, {
+      attributes: ['name', 'id'],
+      include: [{ model: Course, attributes: ['course_name'] }],
+    });
+
+    const profile = dbTeacherData.get({ plain: true });
+
     res.render('profile', {
       pageTitle: 'profile',
+      profile,
     });
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error', error });

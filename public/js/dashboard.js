@@ -1,3 +1,5 @@
+console.log("Dashboard logic connected...")
+
 
 // Go to Homepage
 document.querySelector('#homepage').addEventListener("click", function(){
@@ -16,6 +18,20 @@ document.location.replace('/profile');
 
 //Log out, redirects to login.handlebars
 document.querySelector('#logout').addEventListener('click', function(){
-document.location.replace('/login');
+    
+    fetch('/api/teachers/logout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(data => {
+        console.log("User logged out successfully");
+        document.location.replace('/');
+    })
+    .catch(error => {
+        console.error.log("Error: ", error);
+    })
+    
 });
 

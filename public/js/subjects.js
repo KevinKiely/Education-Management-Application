@@ -14,6 +14,19 @@ document.querySelector('#profile').addEventListener('click', function () {
 });
 
 //Log out, redirects to login.handlebars
-document.querySelector('#logout').addEventListener('click', function () {
-  document.location.replace('/login');
+document.querySelector('#logout').addEventListener('click', function(){
+
+  fetch('/api/teachers/logout', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  })
+  .then(data => {
+      console.log("User logged out successfully");
+      document.location.replace('/');
+  })
+  .catch(error => {
+      console.error.log("Error: ", error);
+  })
 });

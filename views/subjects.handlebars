@@ -1,8 +1,27 @@
-<div class="navbar">
-  <button id="homepage">Homepage</button>
-  <button id="myClasses">My Classes</button>
-  <button id="profile">Profile</button>
-  <button id="logout">Logout</button>
-</div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" id="homepage">
+        Homepage
+      </a>
+      <a class="navbar-item" id="myClasses">
+        My Classes
+      </a>
+      <a class="navbar-item" id="profile">
+        Profile
+      </a>
+    </div>
 
-<script src='/public/js/subjects.js'></script>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <button class="button is-primary" id="logout">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script src="/public/js/subjects.js"></script>

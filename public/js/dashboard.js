@@ -6,7 +6,7 @@ document.location.replace('/dashboard');
 
 // Go to Myclasses tab
 document.querySelector('#myClasses').addEventListener('click', function(){
-document.location.replace('/subjects');
+document.location.replace('/courses');
 });
 
 // Go to My profile

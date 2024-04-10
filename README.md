@@ -37,7 +37,7 @@ The education management application was built with Express as the web framework
 
 ## Installation
 
-You can run this application locally by following the steps below. You can also visit the live website [here]()
+You can run this application locally by following the steps below. You can also visit the live website [here](https://education-management-182b736245a7.herokuapp.com/)
 
 - Download Node.js at [Node.js](https://nodejs.org/en) if not already installed. You can check if it is installed by typing `node-v` in your command line.
 - Fork the repo to make a copy.

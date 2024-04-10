@@ -16,3 +16,4 @@ Course.belongsToMany(Student, { through: StudentCourse, foreignKey: 'course_id' 
 Student.belongsToMany(Course, { through: StudentCourse, foreignKey: 'student_id' });
 
 module.exports = { Teacher, Course, Student, StudentCourse };
+

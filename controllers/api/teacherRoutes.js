@@ -63,6 +63,8 @@ router.post('/', validateCreateTeacher, async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+  console.log("Session Data: ", req.session);
+  
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();

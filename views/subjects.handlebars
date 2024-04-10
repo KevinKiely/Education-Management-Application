@@ -24,4 +24,29 @@
   </div>
 </nav>
 
+
+ <div id="subjects-list">
+  {{#each courses}}
+    <h2>Course Name: {{this.course_name}}</h2>
+    <div>Course ID: {{this.id}}</div>
+    <p>Description: {{this.course_description}}</p>
+  {{/each}}
+  </div>
+
+
+
+ <div id="student-class-list">
+  {{#each courses as |course|}}
+    <h2>Course Name: {{course.course_name}}</h2>
+    <div>Course ID: {{course.id}}</div>
+    <p>Description: {{course.course_description}}</p>
+    {{#each course.students as |student|}}
+      <p>Student ID:L {{student.id}}</p>
+      <p>Student Name: {{student.name}}</p>
+      <p>Grade: {{student.grade_level}}</p>
+    {{/each}}
+
+  {{/each}}
+  </div>
+
 <script src="/js/subjects.js"></script>

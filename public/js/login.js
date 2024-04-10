@@ -24,5 +24,11 @@ async function login(event) {
   }
 }
 
+function createAccount(){
+document.location.replace('/signup');
+}
+
 document.querySelector('.login-form').addEventListener('submit', login);
+
+document.querySelector('#create-account-btn').addEventListener('submit', createAccount);
 

@@ -19,4 +19,6 @@ router.post('/', withAuth, validateCreateCourse, async (req, res) => {
   }
 });
 
+
+
 module.exports = router;

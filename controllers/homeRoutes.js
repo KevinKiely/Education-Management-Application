@@ -54,6 +54,8 @@ router.get('/courses', withAuth, async (req, res) => {
     });
 
     const courses = dbCoursesData.map((course) => course.get({ plain: true }));
+    console.log("Courses Found: ", courses);
+    console.log("Students Found: ", courses.students[0]);
 
     res.render('subjects', {
       pageTitle: 'Subjects',

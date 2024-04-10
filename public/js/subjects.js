@@ -30,3 +30,9 @@ document.querySelector('#logout').addEventListener('click', function(){
       console.error.log("Error: ", error);
   })
 });
+
+
+// Navigates to create course form
+document.querySelector('#create-course-form').addEventListener('click', function (){
+  document.location.replace('/courses/create');
+});

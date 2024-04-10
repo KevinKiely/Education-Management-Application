@@ -24,29 +24,38 @@
   </div>
 </nav>
 
-
- <div id="subjects-list">
-  {{#each courses}}
-    <h2>Course Name: {{this.course_name}}</h2>
-    <div>Course ID: {{this.id}}</div>
-    <p>Description: {{this.course_description}}</p>
-  {{/each}}
-  </div>
-
-
-
- <div id="student-class-list">
-  {{#each courses as |course|}}
-    <h2>Course Name: {{course.course_name}}</h2>
+<h2> LIST OF CLASSES</h2>
+<div id="subjects-list">
+ 
+    {{! Class Information}}
+  <div id="student-class-list">
+    {{#each courses as |course|}}
+    <p>Course Name: {{course.course_name}}</p>
     <div>Course ID: {{course.id}}</div>
     <p>Description: {{course.course_description}}</p>
-    {{#each course.students as |student|}}
-      <p>Student ID:L {{student.id}}</p>
-      <p>Student Name: {{student.name}}</p>
-      <p>Grade: {{student.grade_level}}</p>
-    {{/each}}
 
-  {{/each}}
+
+      {{! Student Information}}
+      <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Grade Level</th>
+        </tr>
+        {{#each course.students as |student|}}
+        <tr>
+        <td>Student ID: {{student.id}}</td>
+        <td>Student Name: {{student.name}}</td>
+        <td>Grade: {{student.grade_level}}</td>
+        </tr>
+        {{/each}}      
+      </table>
+    {{/each}}
   </div>
+</div>
+
+
+<hr>
+<button id="create-course-form"> ADD NEW CLASS </button>
 
 <script src="/js/subjects.js"></script>

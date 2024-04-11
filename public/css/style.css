@@ -34,3 +34,34 @@
 .banner-content button:hover {
     background-color: #0056b3;
 }
+
+
+
+
+.popup-form {
+    display: none; 
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 16px;
+    margin: 6px;
+    border: 4px solid #1a1111;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+

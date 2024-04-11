@@ -57,6 +57,9 @@ You can run this application locally by following the steps below. You can also 
 
 ## Visuals
 
+<img width="650" alt="screenshot" src="https://github.com/KevinKiely/Education-Management-Application/assets/29121238/ecde0642-af3b-4ed6-aa82-4acee9457505">
+
+
 ## Tests
 
 N/A

@@ -24,4 +24,60 @@
   </div>
 </nav>
 
+{{!Teacher Profile Information}}
+<section id="teacher-profile">
+
+<h2><strong>Name:</strong></h2>
+<div id="teacher-name"></div>
+
+<h2><strong>Photo</strong></h2>
+<div>Coming Soon</div>
+
+<h2><strong>Teaching Specialty:</strong></h2>
+<div id="teacher-specialty"></div>
+
+<h2><strong>About Me:</strong></h2>
+<div id="teacher-about-me"></div>
+
+<h2><strong>Preferred Email:</strong></h2>
+<div id="teacher-email"></div>
+
+</section>
+<hr>
+
+{{!This is the popup form for editing your profile, all answers will 
+be saved to local storage}}
+
+<button style="border: 2px solid; padding: 4px; border-radius: 6px;" id="edit-profile">EDIT PROFILE</button>
+
+
+
+<div class="overlay" id="overlay"></div>
+<div class="popup-form" id="popupForm">
+    <h2>Updating Profile Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="specialty">Teaching Specialty:</label>
+        <textarea type="text" id="specialty" name="specialty"></textarea>
+        <br>
+        <label for="about-me">About Me:</label>
+        <textarea type="text" id="about-me" name="about-me"></textarea>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <br>
+
+
+        <button id="save-profile" style="border: 2px solid; padding: 4px; border-radius: 6px;" >Submit</button>
+        <br>
+        <button id="close-form" type="button" style="border: 2px solid; padding: 4px; border-radius: 6px;"> Close</button>
+    </form>
+</div>
+
+
+
+
 <script src='/js/profile.js'></script>

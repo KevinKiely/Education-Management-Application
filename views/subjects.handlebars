@@ -24,38 +24,44 @@
   </div>
 </nav>
 
-<h2> LIST OF CLASSES</h2>
-<div id="subjects-list">
- 
-    {{! Class Information}}
-  <div id="student-class-list">
-    {{#each courses as |course|}}
-    <p>Course Name: {{course.course_name}}</p>
-    <div>Course ID: {{course.id}}</div>
-    <p>Description: {{course.course_description}}</p>
+<section class="section">
+  <div class="container">
+    <h2>LIST OF CLASSES</h2>
+    <div id="subjects-list">
+      <!-- Class Information -->
+      <div id="student-class-list">
+        {{#each courses as |course|}}
+        <p>Course Name: {{course.course_name}}</p>
+        <div>Course ID: {{course.id}}</div>
+        <p>Description: {{course.course_description}}</p>
 
+        <!-- Student Information -->
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Grade Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each course.students as |student|}}
+            <tr>
+              <td>{{student.id}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.grade_level}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/each}}
+      </div>
+    </div>
 
-      {{! Student Information}}
-      <table>
-        <tr>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Grade Level</th>
-        </tr>
-        {{#each course.students as |student|}}
-        <tr>
-        <td>Student ID: {{student.id}}</td>
-        <td>Student Name: {{student.name}}</td>
-        <td>Grade: {{student.grade_level}}</td>
-        </tr>
-        {{/each}}      
-      </table>
-    {{/each}}
+    <hr>
+
+    <button class="button is-primary" id="create-course-form">ADD NEW CLASS</button>
   </div>
-</div>
-
-
-<hr>
-<button id="create-course-form"> ADD NEW CLASS </button>
+</section>
 
 <script src="/js/subjects.js"></script>

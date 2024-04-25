@@ -6,7 +6,7 @@ async function createAccount(event) {
   const password = document.querySelector('#password').value;
 
   // Send fetch request to add a new dish
-  const response = await fetch(`/api/teachers`, {
+  const response = await fetch (`/api/teachers`, {
     method: 'POST',
     body: JSON.stringify({
       name,
